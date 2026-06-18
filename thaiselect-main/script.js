@@ -443,7 +443,7 @@ function updateOutputText() {
                 const nonCapitalMueang = new Set(['เมืองจันทร์', 'เมืองปาน', 'เมืองยาง', 'เมืองสรวง']);
                 let isCapital = false;
                 if (province !== 'กรุงเทพมหานคร') {
-                    if (cleanName === province.trim()) isCapital = true;
+                    if (cleanName === province.trim() && province !== 'พระนครศรีอยุธยา') isCapital = true;
                     else if (cleanName.startsWith('เมือง') && !nonCapitalMueang.has(cleanName)) isCapital = true;
                 }
                 return isCapital ? `${prefix}เมืองฯ` : `${prefix}${cleanName}`;
